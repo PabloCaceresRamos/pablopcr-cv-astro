@@ -1,10 +1,11 @@
 ---
 import { FiMenu, FiX } from "react-icons/fi";
 import NotificationBell from "./notificationBell.jsx";
-import { FaLinkedinIn, FaGithub } from "react-icons/fa6";
+import { FaLinkedinIn } from "react-icons/fa6";
 
 const links = [
   { name: "Inicio", href: "/" },
+  { name: "Experiencia", href: "/experiencia" },
   { name: "Proyectos", href: "/proyectos" },
   { name: "Sobre Mi", href: "/about" },
   { name: "Contacto", href: "/contact" },
@@ -25,7 +26,7 @@ const links = [
         <h3
           class="text-[#69c7c7] text-3xl font-bold drop-shadow-[1.5px_1.5px_0_#7836cf]"
         >
-          LRC
+          PABLO CÁCERES
         </h3>
       </a>
 
@@ -48,7 +49,7 @@ const links = [
           <NotificationBell client:visible />
 
           <a
-            href="https://www.linkedin.com/in/lautaro-rodr%C3%ADguez-collins-40505624a/"
+            href="https://www.linkedin.com/in/pcaceresr"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="LinkedIn"
@@ -56,15 +57,6 @@ const links = [
             <FaLinkedinIn
               className="h-7 w-7 cursor-pointer hover:text-[#7836cf]"
             />
-          </a>
-
-          <a
-            href="https://github.com/Lautaro-R-collins"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="GitHub"
-          >
-            <FaGithub className="h-7 w-7 cursor-pointer hover:text-[#7836cf]" />
           </a>
         </li>
       </ul>

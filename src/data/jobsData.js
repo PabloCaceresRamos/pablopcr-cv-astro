@@ -1,34 +1,32 @@
 export const jobs = [
   {
-    title: "Frontend Developer - Neowyze",
-    time: ["12/2024 - 05/2025"],
+    title: "AI Engineer - Telefónica",
+    time: ["08/2024 - Actualidad"],
     description:
-      "Mis tareas en Neowyze consisten en desarrollar webs responsivas basadas en diseños proporcionados en Figma, utilizando Astro, React, Tailwind y otras librerías frontend.",
+      "Diseño, desarrollo e implementación de tecnologías de LLMs para mejorar la eficiencia en operaciones. Desarrollo integral de soluciones de IA (end-to-end), administración de bases de datos y despliegue en Azure.",
     list: [
-      "Para el flujo de trabajo, utilizo Jira como herramienta de gestión y Git/GitHub como sistema de control de versiones.",
-      "Trabajo bajo la metodología ágil Scrum, con sprints de 2 semanas y dos reuniones diarias (dailies) para planificar el proyecto y presentar avances",
+      "Implementé un sistema RAG corporativo con integración de múltiples fuentes y actualización automática.",
+      "Desarrollé Agentes IA autónomos para consultas a bases de datos y APIs mediante lenguaje natural.",
+      "Diseño e implementación de Arquitecturas 100% en Cloud de Azure para Bots y APPs en Microsoft Teams.",
     ],
+    imagen: "/companies/telefonica.jpg",
+    tecnologias: ["LLMs", "Azure", "Python", "RAG"],
+    categoria: "ia",
+    link: "https://www.telefonica.com",
   },
   {
-    title: "Frontend Developer - Vegna",
-    time: ["05/2024 - 02/2024"],
-    description: "Desarrollo y mantenimiento de interfaces de usuario con:",
-    list: ["JavaScript - TypeScript", "React - Next.js", "Tailwind", "Shadcn"],
-  },
-  {
-    title: "Frontend Developer - Igrowker",
-    time: ["07/2022 - 08/2022"],
-    description: "Desarrollo y mantenimiento de interfaces de usuario con",
-    list: ["React - React Router - Context api - CSS - Material UI"],
-  },
-  {
-    title: " Web Developer - NoCountry",
-    time: ["03/2022 - 06/2022"],
+    title: "Data Scientist - Ayesa",
+    time: ["10/2022 - 08/2024"],
     description:
-      "Desarrollo de aplicaciones web responsivas MVP fullstack usando para su desarrollo tecnologías como",
+      "Desarrollo de estrategias de Machine Learning e IA para multinacionales del Sector Eléctrico (Enel X, Acciona, Iberdrola).",
     list: [
-      "Frontend : React - React Router - Context api - tailwindcss",
-      "Backend : API REST con Express.js, MongoDB",
+      "Propuse estrategias novedosas para soluciones de IA Generativa (RAG, Text-to-API, Langchain, Fine-tuning).",
+      "Lideré el desarrollo de modelos RNN, LSTM, GRU y CNN para superar licitaciones complejas (Iberdrola).",
+      "Extracción y procesamiento (ETL) de datos de fuentes externas para proyectos de Deep Learning.",
     ],
+    imagen: "/companies/ayesa.jpg",
+    tecnologias: ["Machine Learning", "Deep Learning", "Python", "ETL"],
+    categoria: "ds",
+    link: "https://www.ayesa.com",
   },
 ];

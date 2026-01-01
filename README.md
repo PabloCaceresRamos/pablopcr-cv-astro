@@ -1,4 +1,4 @@
-# 🌌 Personal Portfolio – Lautaro 
+# 🌌 Personal Portfolio – Pablo 
 
 ---
 
@@ -6,7 +6,7 @@
 
 - ⚡️ Construido con **Astro** y **React** 
 - 🎨 **Diseño responsive**
-- 🧠 **Filtrado dinámico de proyectos**
+- 🧠 **AI Engineer & Data Scientist Portfolio**
 - 💬 Secciones personalizables: *Sobre mí*, *Proyectos*, *Experiencia*, *Contacto*  
 
 ---

@@ -1,17 +1,14 @@
 ---
 const technologies = [
-  "astro",
-  "react",
-  "typeScript",
-  "tailwindcss",
-  "nodejs",
-  "HTML5",
-  "CSS3",
-  "javaScript",
-  "git",
-  "supabase",
-  "mysql",
-  "bash",
+  { name: "Hugging Face", icon: "huggingface.svg" },
+  { name: "LangChain", icon: "langchain.svg" },
+  { name: "FastAPI", icon: "fastapi.svg" },
+  { name: "Python", icon: "python.svg" },
+  { name: "PostgreSQL", icon: "postgresql.svg" },
+  { name: "Git", icon: "git.svg" },
+  { name: "Azure", icon: "azure.svg" },
+  { name: "MongoDB", icon: "mongodb.svg" },
+  { name: "Docker", icon: "docker.svg" },
 ];
 ---
 
@@ -21,15 +18,15 @@ const technologies = [
       technologies.concat(technologies, technologies).map((tech) => (
         <div class="group flex items-center gap-2 transition-all duration-300">
           <img
-            src={`/svg/${tech}.svg`}
-            alt={tech}
+            src={`/icons/${tech.icon}`}
+            alt={tech.name}
             class="h-7 w-auto object-contain  transition-transform group-hover:scale-110"
             width="30"
             height="30"
             loading="lazy"
           />
           <span class="text-lg font-medium text-white">
-            {tech.charAt(0).toUpperCase() + tech.slice(1)}
+            {tech.name}
           </span>
         </div>
       ))

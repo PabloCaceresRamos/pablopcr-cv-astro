@@ -32,13 +32,13 @@
 }
 
 /* Botones de filtrado no activos */
-.filter-btn {
+.filter-btn, .exp-filter-btn {
   opacity: 0.4;
   transition: 0.18s ease;
 }
 
 /* Botón activo */
-.filter-btn.active {
+.filter-btn.active, .exp-filter-btn.active {
   transform: scale(1.05);
   opacity: 1;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);

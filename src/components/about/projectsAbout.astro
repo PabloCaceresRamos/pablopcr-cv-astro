@@ -1,0 +1,85 @@
+---
+// Data
+import { proyectos } from "../../data/projectData";
+
+// Limit to 3 projects for the "About" section
+const featuredProjects = proyectos.slice(0, 3);
+---
+
+<section class="site-container projects-about mt-16 mx-auto max-w-6xl px-4">
+  <h2
+    class="text-4xl font-bold flex flex-col items-center gap-6 text-center whitespace-nowrap text-white md:flex-row md:items-center md:text-start"
+  >
+    <span class="drop-shadow-[2px_2px_0_#7836cf]">Mis Proyectos</span>
+    <span
+      class="hidden h-1.5 grow rounded-lg drop-shadow-[2px_2px_0_#0debd8] bg-[#7836cf] md:block"
+    ></span>
+  </h2>
+
+  <div class="mt-10 space-y-10">
+    {
+      featuredProjects.map((proyecto) => (
+        <div class="bg-gray-900 p-6 rounded-2xl shadow-lg drop-shadow-[4px_4px_0_#7836cf] flex flex-col md:flex-row gap-8 items-center md:items-start">
+          <!-- Imagen a la izquierda -->
+          <div class="w-full md:w-48 h-48 md:h-32 flex-shrink-0 bg-gray-800 rounded-xl overflow-hidden flex items-center justify-center">
+            <img
+              src={proyecto.imagen}
+              alt={`Imagen de ${proyecto.titulo}`}
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- Contenido a la derecha -->
+          <div class="flex-grow">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+              <h3 class="text-2xl font-bold text-[#69c7c7]">{proyecto.titulo}</h3>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-4">
+              {proyecto.tecnologias.map((tech) => (
+                <span class="rounded-md bg-[#7836cf]/20 text-[#a27ed1] px-2 py-0.5 text-xs font-semibold">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <p class="text-gray-300 mb-4">{proyecto.descripcion}</p>
+            
+            <div class="flex gap-4">
+              {proyecto.demo && proyecto.demo !== "#" && (
+                <a 
+                  href={proyecto.demo} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="inline-block text-[#7836cf] font-bold hover:underline"
+                >
+                  Ver Demo →
+                </a>
+              )}
+              {proyecto.codigo && (
+                <a 
+                  href={proyecto.codigo} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="inline-block text-[#69c7c7] font-bold hover:underline"
+                >
+                  Ver Código →
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
+      ))
+    }
+  </div>
+
+  <!-- Botón para ver todos -->
+  <div class="mt-12 flex justify-center">
+    <a
+      href="/proyectos"
+      class="px-8 py-3 bg-[#69c7c7] text-[#1d1250] font-bold rounded-full hover:bg-[#46caca] drop-shadow-[3px_3px_0_#7836cf] active:translate-y-0.5 active:drop-shadow-none transition-all duration-150"
+    >
+      Ver todos los proyectos
+    </a>
+  </div>
+</section>
