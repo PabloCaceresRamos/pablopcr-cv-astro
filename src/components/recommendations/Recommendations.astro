@@ -1,0 +1,37 @@
+---
+import RecommendationCard from "./RecommendationCard.astro";
+import { recommendations } from "../../data/recommendationsData";
+---
+
+<section class="site-container mt-16 mx-auto max-w-6xl px-4">
+  <h2
+    class="text-4xl font-bold flex flex-col items-center gap-6 text-center whitespace-nowrap text-white md:flex-row md:items-center md:text-start"
+  >
+    <span class="drop-shadow-[2px_2px_0_#7836cf]">Recomendaciones</span>
+    <span
+      class="hidden h-1.5 grow rounded-lg drop-shadow-[2px_2px_0_#0debd8] bg-[#7836cf] md:block"
+    ></span>
+  </h2>
+
+  <div class="mt-10 grid grid-cols-1 md:grid-cols-2 gap-6">
+    {
+      recommendations.map((rec) => (
+        <RecommendationCard {...rec} />
+      ))
+    }
+  </div>
+
+  <div class="mt-12 flex justify-center pb-10">
+    <a
+      href="https://www.linkedin.com/in/pcaceresr/details/recommendations/"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="inline-flex items-center gap-2 px-6 py-3 text-lg font-semibold text-white bg-[#7836cf] rounded-full hover:bg-[#602bcf] transition-colors shadow-lg hover:shadow-xl hover:scale-105 transform duration-200"
+    >
+      <span>Ver más recomendaciones en LinkedIn</span>
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+      </svg>
+    </a>
+  </div>
+</section>

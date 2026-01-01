@@ -4,7 +4,7 @@ import Header from "../components/home/header/header.astro";
 import Slider from "../components/home/header/slider.astro";
 import AboutHome from "../components/home/aboutHome/aboutHome.astro";
 import Experience from "../components/about/experience.astro";
-import FAQS from "../components/home/faqs/faqs.jsx";
+import RecommendationsCarousel from "../components/recommendations/RecommendationsCarousel.astro";
 import Banner from "../components/commons/banners/banner.astro";
 ---
 
@@ -12,7 +12,7 @@ import Banner from "../components/commons/banners/banner.astro";
   <Header />
   <Slider />
   <AboutHome />
+  <RecommendationsCarousel />
   <Experience />
-  <FAQS client:visible />
   <Banner />
 </Layout>

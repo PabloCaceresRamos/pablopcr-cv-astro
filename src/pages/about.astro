@@ -6,17 +6,15 @@ import ProjectsAbout from "../components/about/projectsAbout.astro";
 import Education from "../components/about/education.astro";
 import Features from "../components/about/features.astro";
 import Skills from "../components/about/skills.astro";
-import FaqsAbout from "../components/about/FaqsAbout.jsx";
 import Banner from "../components/commons/banners/banner.astro";
 ---
 
 <Layout title="about" description="about">
   <Hero titulo="Sobre Mi" />
   <AboutMe />
+  <Features />
   <ProjectsAbout />
   <Education />
-  <Features />
   <Skills />
-  <FaqsAbout client:visible/>
   <Banner />
 </Layout>

@@ -1,0 +1,47 @@
+---
+import { recommendations } from "../../data/recommendationsData";
+
+// Duplicate for infinite scroll
+const allRecommendations = [...recommendations, ...recommendations, ...recommendations, ...recommendations];
+---
+
+<div class="relative overflow-hidden py-12 mt-8 w-full">
+  <div class="animate-scroll-slow flex w-max gap-12 px-4">
+    {
+      allRecommendations.map((rec) => (
+        <a 
+          href="https://www.linkedin.com/in/pcaceresr/details/recommendations/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-72 flex-shrink-0 bg-[#1a103c] p-4 rounded-xl border border-[#7836cf]/30 hover:border-[#69c7c7] transition-all duration-300 group hover:-translate-y-1 hover:shadow-[0_0_15px_rgba(105,199,199,0.3)]"
+        >
+          <div class="flex items-center gap-3 mb-3">
+             <div class="w-12 h-12 rounded-full overflow-hidden border-2 border-[#7836cf] group-hover:border-[#69c7c7] transition-colors">
+                <img src={rec.image} alt={rec.name} class="w-full h-full object-cover" />
+             </div>
+             <div class="overflow-hidden">
+                <h4 class="text-white font-bold text-sm truncate">{rec.name}</h4>
+                <p class="text-[#a27ed1] text-xs truncate">{rec.company}</p>
+             </div>
+          </div>
+          <p class="text-gray-300 text-xs italic line-clamp-2 leading-relaxed">
+            "{rec.text}"
+          </p>
+        </a>
+      ))
+    }
+  </div>
+</div>
+
+<style>
+  @keyframes scroll-rec {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+  }
+  .animate-scroll-slow {
+    animation: scroll-rec 120s linear infinite;
+  }
+  .animate-scroll-slow:hover {
+    animation-play-state: paused;
+  }
+</style>

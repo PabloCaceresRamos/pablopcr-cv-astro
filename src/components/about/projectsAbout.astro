@@ -10,7 +10,7 @@ const featuredProjects = proyectos.slice(0, 3);
   <h2
     class="text-4xl font-bold flex flex-col items-center gap-6 text-center whitespace-nowrap text-white md:flex-row md:items-center md:text-start"
   >
-    <span class="drop-shadow-[2px_2px_0_#7836cf]">Mis Proyectos</span>
+    <span class="drop-shadow-[2px_2px_0_#7836cf]">Proyectos personales</span>
     <span
       class="hidden h-1.5 grow rounded-lg drop-shadow-[2px_2px_0_#0debd8] bg-[#7836cf] md:block"
     ></span>
@@ -46,16 +46,6 @@ const featuredProjects = proyectos.slice(0, 3);
             <p class="text-gray-300 mb-4">{proyecto.descripcion}</p>
             
             <div class="flex gap-4">
-              {proyecto.demo && proyecto.demo !== "#" && (
-                <a 
-                  href={proyecto.demo} 
-                  target="_blank" 
-                  rel="noopener noreferrer"
-                  class="inline-block text-[#7836cf] font-bold hover:underline"
-                >
-                  Ver Demo →
-                </a>
-              )}
               {proyecto.codigo && (
                 <a 
                   href={proyecto.codigo} 

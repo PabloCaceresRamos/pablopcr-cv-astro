@@ -2,7 +2,6 @@
 import "../styles/projects.css";
 import Layout from "../layouts/Layout.astro";
 import Hero from "../components/commons/hero/hero.astro";
-import ProjectCard from "../components/project/proyectCard.astro";
 import Banner from "../components/commons/banners/banner.astro";
 import { proyectos } from "../data/projectData.js";
 ---
@@ -24,25 +23,73 @@ import { proyectos } from "../data/projectData.js";
     <button class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#7836cf] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none" data-filter="mlops">
       MLOps
     </button>
+    <button class="filter-btn cursor-pointer rounded-full bg-[#69c7c7] px-5 py-1.5 text-sm font-bold text-[#1d1250] drop-shadow-[2px_2px_0_#7836cf] transition-all duration-150 active:translate-y-0.5 active:drop-shadow-none" data-filter="software">
+      Software
+    </button>
   </div>
 
-  <!-- Cards -->
+  <!-- Listado de Proyectos -->
   <div
     id="projects-container"
-    class="4xl:px-96 flex flex-wrap justify-center gap-5 px-3 pt-5 xl:px-32 2xl:px-60"
+    class="site-container mt-10 space-y-10 mx-auto max-w-6xl px-4"
   >
     {
       proyectos.map((proyecto, index) => (
-        <ProjectCard
-          index={index}
-          titulo={proyecto.titulo}
-          descripcion={proyecto.descripcion}
-          imagen={proyecto.imagen}
-          tecnologias={proyecto.tecnologias}
-          demo={proyecto.demo}
-          codigo={proyecto.codigo}
-          categoria={proyecto.categoria}
-        />
+        <div 
+          data-index={index}
+          data-categoria={proyecto.categoria ?? ""}
+          class="project-item bg-gray-900 p-6 rounded-2xl shadow-lg drop-shadow-[4px_4px_0_#7836cf] flex flex-col md:flex-row gap-8 items-center md:items-start transition-all duration-300"
+        >
+          <!-- Imagen a la izquierda -->
+          <div class="w-full md:w-64 h-48 flex-shrink-0 bg-gray-800 rounded-xl overflow-hidden border-2 border-[#7836cf]">
+            <img
+              src={proyecto.imagen}
+              alt={`Imagen de ${proyecto.titulo}`}
+              class="w-full h-full object-cover"
+            />
+          </div>
+
+          <!-- Contenido a la derecha -->
+          <div class="flex-grow w-full">
+            <div class="flex flex-col md:flex-row md:justify-between md:items-center mb-2">
+              <h3 class="text-2xl font-bold text-[#69c7c7]">{proyecto.titulo}</h3>
+            </div>
+
+            <div class="flex flex-wrap gap-2 mb-4">
+              {proyecto.tecnologias.map((tech) => (
+                <span class="rounded-md bg-[#7836cf]/20 text-[#a27ed1] px-2 py-0.5 text-xs font-semibold">
+                  {tech}
+                </span>
+              ))}
+            </div>
+
+            <p class="text-gray-300 mb-4 font-semibold">{proyecto.descripcion}</p>
+
+            {proyecto.details && (
+              <ul class="marker:text-[#7836cf] list-disc space-y-2 pl-5 text-gray-300 mb-4">
+                {proyecto.details.map((item) => (
+                  <li>{item}</li>
+                ))}
+              </ul>
+            )}
+            
+            <div class="flex gap-4 mt-auto">
+              {proyecto.codigo && (
+                <a 
+                  href={proyecto.codigo} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  class="inline-flex items-center gap-1 text-[#69c7c7] font-bold hover:underline"
+                >
+                  Ver Código
+                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" class="w-5 h-5">
+                    <path fill-rule="evenodd" d="M3 10a.75.75 0 01.75-.75h10.638L10.23 5.29a.75.75 0 111.04-1.08l5.5 5.25a.75.75 0 010 1.08l-5.5 5.25a.75.75 0 11-1.04-1.08l4.158-3.96H3.75A.75.75 0 013 10z" clip-rule="evenodd" />
+                  </svg>
+                </a>
+              )}
+            </div>
+          </div>
+        </div>
       ))
     }
   </div>
